@@ -1,0 +1,78 @@
+% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+
+
+
+\documentclass[12pt, a4paper, openany, twoside]{book}
+
+% 字体配置文件
+%%%for macOS 字体
+% \input{setup/fonts}
+%%%for office windows字体
+ \input{setup/windows_fonts}
+
+% 宏包配置文件
+\input{setup/packages}
+
+% 格式文件
+\input{setup/format_note_book}  %XeLaTeX笔记本模板
+\input{setup/code_style}  %代码块格式
+\begin{document}
+
+% 定义所有的图片文件在 FIGURES_thermal 子目录下
+\graphicspath{{FIGURES/}}
+
+% 前言
+\frontmatter
+\pagenumbering{Roman}
+
+
+% 设置目录字体和行间距
+\defaultmenufont
+% 目录
+\tableofcontents
+\cleardoublepage
+% 插图目录
+%\listoffigures
+% 表格目录
+%\listoftables
+\cleardoublepage
+
+\defaultfont
+\mainmatter
+% 正文章节
+\defaultfont
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+
+
+\include{body/ROM}
+
+
+
+\cleardoublepage
+
+
+% 参考文献
+\defaultfont
+\wuhao
+
+
+\begin{thebibliography}{99}
+\bibitem{Ruppert}Ruppert J. A Delaunay refinement algorithm for quality 2-dimensional mesh generation[J].
+\bibitem{Shewchuk}Cheng S W, Dey T K, Shewchuk J, et al. Delaunay mesh generation[M].
+\bibitem{Chew}L. Paul Chew. Guaranteed-Quality Mesh Generation for Curved Surfaces.
+\bibitem{Üngör}Üngör A. Off-centers: A new type of Steiner points for computing size-optimal quality-guaranteed Delaunay triangulations[C]//Latin American Symposium on Theoretical Informatics. Berlin, Heidelberg: Springer Berlin Heidelberg, 2004: 152-161.
+\bibitem{OVM}Kremer M, Bommes D, Kobbelt L. OpenVolumeMesh–A versatile index-based data structure for 3D polytopal complexes[C]//Proceedings of the 21st International Meshing Roundtable. Springer Berlin Heidelberg, 2013: 531-548.
+\bibitem{CompGeo}De Berg M. Computational geometry: algorithms and applications[M]. Springer Science \& Business Media, 2000.
+\bibitem{LEDA}Mehlhorn K, Näher S. LEDA: A platform for combinatorial and geometric computing[M]. Cambridge university press, 1999.
+\bibitem{CDT-Zalik}Domiter V, Žalik B. Sweep‐line algorithm for constrained Delaunay triangulation[J]. International Journal of Geographical Information Science, 2008, 22(4): 449-462.
+\end{thebibliography}
+
+\cleardoublepage
+
+
+
+\cleardoublepage
+
+\end{document}
